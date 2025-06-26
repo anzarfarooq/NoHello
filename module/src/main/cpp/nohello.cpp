@@ -513,8 +513,6 @@ static void NoRoot(int fd) {
 	static PropertyManager pm("/data/adb/modules/zygisk_nohello/module.prop");
 
 	static const int compatbility = [] {
-		if (fs::exists("/data/adb/modules/zygisk_shamiko") && !fs::exists("/data/adb/modules/zygisk_shamiko/disable"))
-			return MODULE_CONFLICT;
 		if (fs::exists("/data/adb/modules/zygisk-assistant") && !fs::exists("/data/adb/modules/zygisk-assistant/disable"))
 			return MODULE_CONFLICT;
 		if (fs::exists("/data/adb/modules/treat_wheel") && !fs::exists("/data/adb/modules/treat_wheel/disable"))
